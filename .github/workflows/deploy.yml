@@ -24,6 +24,14 @@ jobs:
 
   push:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
+    needs: build
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6

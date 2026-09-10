@@ -1,0 +1,21 @@
+services:
+  web:
+    init: true
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - PGHOST=${POSTGRES_HOST}
+      - PGPORT=${POSTGRES_PORT}
+      - PGUSER=postgres
+      - PGPASSWORD=${POSTGRES_PASSWORD}
+
+  redis:
+    image: redis:alpine
+
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}

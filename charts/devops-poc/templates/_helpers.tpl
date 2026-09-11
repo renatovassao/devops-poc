@@ -49,14 +49,3 @@ Selector labels
 app.kubernetes.io/name: {{ include "devops-poc.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
-
-{{/*
-Create the name of the service account to use
-*/}}
-{{- define "devops-poc.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "devops-poc.fullname" .) .Values.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.serviceAccount.name }}
-{{- end }}
-{{- end }}

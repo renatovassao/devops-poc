@@ -9,6 +9,13 @@ service:
   type: ClusterIP
   port: 3000
 
+ingress:
+  enabled: true
+  hosts:
+    - paths:
+        - path: /
+          pathType: Prefix
+
 livenessProbe:
   httpGet:
     path: /healthz

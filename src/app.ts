@@ -7,10 +7,23 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(morgan("dev"));
+
+app.use(morgan("dev", {
+  skip: function (req) {
+    return req.url === '/healthz' || req.url === '/readyz';
+  }
+}));
 
 app.get('/', (req, res) => {
   res.status(200).json(`Hello world: ${sum(1, 1)}`);
+});
+
+app.get('/healthz', (req, res) => {
+  res.status(200).json();
+});
+
+app.get('/readyz', (req, res) => {
+  res.status(200).json();
 });
 
 app.get('/pg', async (req, res) => {

@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import { sum } from './lib.js';
 import { query } from './pg.js';
+import { get } from './redis.js';
 
 const app = express();
 const port = 3000;
@@ -31,7 +32,7 @@ app.get('/pg', async (req, res) => {
 });
 
 app.get('/redis', async (req, res) => {
-  res.status(200).json(`Redis: ${await query()}`);
+  res.status(200).json(`Redis: ${await get()}`);
 });
 
 app.listen(port, () => {

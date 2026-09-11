@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 import { sum } from '../src/lib.js';
 
-test('adds 1 + 2 to equal 2', () => {
-  expect(sum(1, 2)).toBe(2);
+test('adds 1 + 1 to equal 2', () => {
+  expect(sum(1, 1)).toBe(2);
 });

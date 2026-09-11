@@ -9,12 +9,19 @@ service:
   type: ClusterIP
   port: 3000
 
-ingress:
-  enabled: true
-  hosts:
-    - paths:
-        - path: /
-          pathType: Prefix
+env:
+  - name: REDIS_HOST
+    value: "redis"
+  - name: REDIS_PORT
+    value: "6379"
+  - name: PGHOST
+    value: "postgres"
+  - name: PGPORT
+    value: "5432"
+  - name: PGUSER
+    value: "postgres"
+  - name: PGPASSWORD
+    value: "postgres"
 
 livenessProbe:
   httpGet:

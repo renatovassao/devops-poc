@@ -1,7 +1,11 @@
 import { createClient } from "redis";
 
+const { REDIS_HOST, REDIS_PORT } = process.env;
+
 export async function get() {
-  const client = await createClient()
+  const client = await createClient({
+    url: `redis://${REDIS_HOST}:${REDIS_PORT}`,
+  })
     .on("error", (err) => console.log("Redis Client Error", err))
     .connect();
 

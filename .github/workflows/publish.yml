@@ -65,7 +65,7 @@ jobs:
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
 
-  release:
+  helm-publish:
     permissions:
       contents: write
     runs-on: ubuntu-latest

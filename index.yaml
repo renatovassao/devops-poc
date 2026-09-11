@@ -3,6 +3,16 @@ entries:
   devops-poc:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2026-09-11T13:08:53.630866023Z"
+    description: A Helm chart for Kubernetes
+    digest: fa107bb3d8c9bd6505463a69f0c35a02b380412122852cac06dce730f1642c93
+    name: devops-poc
+    type: application
+    urls:
+    - https://github.com/renatovassao/devops-poc/releases/download/devops-poc-0.1.2/devops-poc-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2026-09-11T12:48:07.007607548Z"
     description: A Helm chart for Kubernetes
     digest: 525d597b495b9f7eb01ac2193d939763c48433a02a670b950b0c9d3e6faed46f
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/renatovassao/devops-poc/releases/download/devops-poc-0.1.0/devops-poc-0.1.0.tgz
     version: 0.1.0
-generated: "2026-09-11T12:48:07.007615984Z"
+generated: "2026-09-11T13:08:53.630956287Z"
